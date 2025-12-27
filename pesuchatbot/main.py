@@ -11,14 +11,14 @@ RESPONSES_FILE = "responses.txt"
 HISTORY_FILE = "chat_history.txt"
 
 DEFAULT_RESPONSES = {
-    "stress": "It's okay to feel stressed sometimes. Take a moment to breathe deeply and ground yourself. ",
-    "exam": "Exams can be challenging, but you're capable of handling it. Take it one step at a time. ",
-    "anxiety": "Anxiety can be tough, but you're not alone. Focus on small calming steps. ",
-    "sad": "It's okay to feel sad sometimes. Be kind to yourself — you deserve care and rest. ",
-    "hello": "Hey there! I'm glad you reached out. How are you feeling today? ",
-    "lonely": "Feeling lonely can be heavy. Remember you matter. ",
-    "tired": "You must be feeling exhausted. Rest is important — it's okay to slow down. ",
-    "bye": "Take care of yourself. You're doing your best, and that's enough. "
+    "stress": "It's okay to feel stressed sometimes. Take a moment to breathe deeply and ground yourself. 🌱",
+    "exam": "Exams can be challenging, but you're capable of handling it. Take it one step at a time. ✨",
+    "anxiety": "Anxiety can be tough, but you're not alone. Focus on small calming steps. 💚",
+    "sad": "It's okay to feel sad sometimes. Be kind to yourself — you deserve care and rest. 💙",
+    "hello": "Hey there! I'm glad you reached out. How are you feeling today? 🌼",
+    "lonely": "Feeling lonely can be heavy. Remember you matter. 💫",
+    "tired": "You must be feeling exhausted. Rest is important — it's okay to slow down. ☁",
+    "bye": "Take care of yourself. You're doing your best, and that's enough. 🌷"
 }
 
 CAMPUS_PLACES = {
@@ -32,29 +32,29 @@ CAMPUS_PLACES = {
 }
 
 POSITIVE_RESPONSES = {
-    "good": ["I'm really glad to hear you're feeling good! ", "That's nice to hear — keep enjoying your day! "],
-    "great": ["That's wonderful! ", "Love that energy! "],
-    "happy": ["That's beautiful! ", "Love to hear that you're feeling happy! "],
+    "good": ["I'm really glad to hear you're feeling good! 😊", "That's nice to hear — keep enjoying your day! 🌱"],
+    "great": ["That's wonderful! 💚", "Love that energy! 🌟"],
+    "happy": ["That's beautiful! 😊", "Love to hear that you're feeling happy! 🌈"],
 }
 
 NEGATIVE_RESPONSES = {
-    "stress": ["It's okay to feel stressed. Take a deep breath and give yourself a moment to relax. "],
-    "tired": ["You must be feeling exhausted. Rest is important — it's okay to slow down. "],
-    "anxiety": ["Anxiety can be overwhelming, but you're not alone. Focus on small calming steps and breathe deeply. "],
-    "sad": ["I'm sorry you're feeling sad. It's okay to take time for yourself. "],
+    "stress": ["It's okay to feel stressed. Take a deep breath and give yourself a moment to relax. 🌱"],
+    "tired": ["You must be feeling exhausted. Rest is important — it's okay to slow down. ☁"],
+    "anxiety": ["Anxiety can be overwhelming, but you're not alone. Focus on small calming steps and breathe deeply. 💚"],
+    "sad": ["I'm sorry you're feeling sad. It's okay to take time for yourself. 💙"],
 }
 
 NEUTRAL_RESPONSES = {
-    "hello": "Hey there! I'm glad you reached out. ",
-    "hi": "Hi! It's nice to hear from you. ",
-    "thanks": "You're welcome ",
-    "bye": "Take care of yourself. You matter "
+    "hello": "Hey there! I'm glad you reached out. 🌼",
+    "hi": "Hi! It's nice to hear from you. 💚",
+    "thanks": "You're welcome 🤍",
+    "bye": "Take care of yourself. You matter 🌷"
 }
 
 REFLECTIVE_FALLBACKS = [
-    "I hear you. Would you like to tell me a little more? ",
-    "That sounds important… I'm here to listen. ",
-    "You're not alone. Take your time, I'm here. "
+    "I hear you. Would you like to tell me a little more? 💛",
+    "That sounds important… I'm here to listen. 🌿",
+    "You're not alone. Take your time, I'm here. 💚"
 ]
 
 ANALYSIS_QUESTIONS = [
@@ -112,8 +112,8 @@ def get_response(user_input, file_responses):
 # --- COMBINED CHATBOT APPLICATION ---
 # ==================================================================== 
 class CombinedChatbot(wx.Frame):
-    def _init_(self):
-        super()._init_(None, title=" PESU Integrated Support System", size=(850, 750))
+    def __init__(self):
+        super()._init_(None, title="🚀 PESU Integrated Support System", size=(850, 750))
         self.SetBackgroundColour(wx.Colour(10, 15, 36))
         ensure_responses_file()
         self.responses = load_responses()
@@ -133,7 +133,7 @@ class CombinedChatbot(wx.Frame):
         header_panel = wx.Panel(main_panel)
         header_panel.SetBackgroundColour(wx.Colour(28, 36, 64))
         header_sizer = wx.BoxSizer(wx.VERTICAL)
-        header_label = wx.StaticText(header_panel, label=" PESU Support Center ")
+        header_label = wx.StaticText(header_panel, label="🚀 PESU Support Center 🌙")
         header_font = wx.Font(22, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD)
         header_label.SetFont(header_font)
         header_label.SetForegroundColour(wx.Colour(143, 170, 255))
@@ -147,13 +147,13 @@ class CombinedChatbot(wx.Frame):
         # Tab 1: Campus Assistant
         self.campus_panel = wx.Panel(self.notebook)
         self.campus_panel.SetBackgroundColour(wx.Colour(11, 18, 32))
-        self.notebook.AddPage(self.campus_panel, " Campus Assistant")
+        self.notebook.AddPage(self.campus_panel, "🗺️ Campus Assistant")
         self._build_campus_tab()
 
         # Tab 2: Unified Wellness & Analysis
         self.wellness_panel = wx.Panel(self.notebook)
         self.wellness_panel.SetBackgroundColour(wx.Colour(240, 244, 247))
-        self.notebook.AddPage(self.wellness_panel, " Wellness & Inner Journey")
+        self.notebook.AddPage(self.wellness_panel, "💚 Wellness & Inner Journey")
         self._build_wellness_tab()
 
         main_sizer.Add(self.notebook, 1, wx.EXPAND | wx.ALL, 15)
@@ -280,12 +280,12 @@ class CombinedChatbot(wx.Frame):
         mode_panel.SetBackgroundColour(wx.Colour(230, 240, 250))
         mode_sizer = wx.BoxSizer(wx.HORIZONTAL)
         
-        self.mode_support = wx.Button(mode_panel, label=" Mental Health Support")
+        self.mode_support = wx.Button(mode_panel, label="💚 Mental Health Support")
         self.mode_support.SetBackgroundColour(wx.Colour(93, 173, 226))
         self.mode_support.SetForegroundColour(wx.Colour(255, 255, 255))
         self.mode_support.Bind(wx.EVT_BUTTON, lambda evt: self._switch_mode("support"))
         
-        self.mode_analysis = wx.Button(mode_panel, label=" Inner Journey")
+        self.mode_analysis = wx.Button(mode_panel, label="🧘 Inner Journey")
         self.mode_analysis.SetBackgroundColour(wx.Colour(155, 155, 155))
         self.mode_analysis.SetForegroundColour(wx.Colour(255, 255, 255))
         self.mode_analysis.Bind(wx.EVT_BUTTON, lambda evt: self._switch_mode("analysis"))
@@ -321,7 +321,7 @@ class CombinedChatbot(wx.Frame):
         
         # Default mode
         self.current_mode = "support"
-        self._insert_wellness_message("Hello! I'm your PESU Wellness companion  How are you feeling today?", False)
+        self._insert_wellness_message("Hello! I'm your PESU Wellness companion 🌼 How are you feeling today?", False)
 
     def _switch_mode(self, mode):
         self.current_mode = mode
@@ -331,14 +331,14 @@ class CombinedChatbot(wx.Frame):
             self.mode_support.SetBackgroundColour(wx.Colour(93, 173, 226))
             self.mode_analysis.SetBackgroundColour(wx.Colour(155, 155, 155))
             self.wellness_btn.SetLabel("Send ➤")
-            self._insert_wellness_message("Mental Health Support Mode \nHow are you feeling today?", False)
+            self._insert_wellness_message("Mental Health Support Mode 💚\nHow are you feeling today?", False)
         else:
             self.mode_support.SetBackgroundColour(wx.Colour(155, 155, 155))
             self.mode_analysis.SetBackgroundColour(wx.Colour(93, 173, 226))
             self.wellness_btn.SetLabel("Start Journey")
             self.analysis_stage = 0
             self.analysis_data = {}
-            self._insert_wellness_message("Inner Journey Program \nClick 'Start Journey' to begin exploring awareness and consciousness.", False)
+            self._insert_wellness_message("Inner Journey Program 🧘\nClick 'Start Journey' to begin exploring awareness and consciousness.", False)
 
     def _insert_wellness_message(self, msg, is_user=True):
         bubble = wx.StaticText(self.wellness_scroll, label=msg)
@@ -419,12 +419,12 @@ class CombinedChatbot(wx.Frame):
         summary = f"""Analysis Complete for {name}
 
 Your Exploration:
-Primary belief of self: {who.upper()}
-True nature: {nature.upper()}
+- Primary belief of self: {who.upper()}
+- True nature: {nature.upper()}
 
 """
         if who.lower() == 'd' or 'awareness' in who.lower():
-            summary += "This aligns with pure awareness. \n"
+            summary += "This aligns with pure awareness. 🌙\n"
         
         summary += "\nThank you for this inner journey, traveller of consciousness."
         
@@ -434,7 +434,7 @@ True nature: {nature.upper()}
         self.analysis_data = {}
 
 # ---------------------- RUN ----------------------
-if _name_ == "_main_":
+if __name__ == "_main_":
     app = wx.App()
     frame = CombinedChatbot()
     frame.Show()
