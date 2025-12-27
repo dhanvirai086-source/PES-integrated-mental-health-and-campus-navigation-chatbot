@@ -1,2 +1,0 @@
-f=open("")
-f.read()
